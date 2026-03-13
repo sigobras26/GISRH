@@ -239,12 +239,6 @@ td video {
 	display: flex;
 }
 
-.measure-control button {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 18px !important;
-}
-
 .tooltip {
     position: relative;
     background: rgba(0, 0, 0, 0.5);
@@ -321,12 +315,6 @@ td video {
     margin-left: 8px;
 }
 
-.search-layer button {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 18px !important;
-}
-
 .search-layer-input-search{
     left: 26px;
     width: 144px;
@@ -356,7 +344,6 @@ td video {
     border-top: none ;
     background: rgba(255, 255, 255, 0.5);
     color: black;
-    font-size: 13px;
 	margin: unset;
 }
 

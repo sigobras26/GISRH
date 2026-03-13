@@ -4,15 +4,12 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:4326',
-            //extent: [-62.883947, -34.420393, -58.880822, -27.974441],
-            units: 'degrees'})
+         maxZoom: 28, minZoom: 1
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-63.384770, -34.122215, -55.571151, -29.004264], map.getSize());
+map.getView().fit([-7437733.103101, -4613891.031839, -5180650.877862, -2871187.363034], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -23,7 +20,6 @@ function pointerOnFeature(evt) {
         return;
     }
     var hasFeature = map.hasFeatureAtPixel(evt.pixel, {
-        hitTolerance: 10,
         layerFilter: function(layer) {
             return layer && (layer.get("interactive"));
         }
@@ -108,7 +104,7 @@ closer.onclick = function() {
 };
 var overlayPopup = new ol.Overlay({
     element: container,
-	autoPan: false
+	autoPan: true
 });
 map.addOverlay(overlayPopup)
     
@@ -223,7 +219,7 @@ function onPointerMove(evt) {
         if (layer && feature instanceof ol.Feature && (layer.get("interactive") || layer.get("interactive") === undefined)) {
             featuresAndLayers.push({ feature, layer });
         }
-    }, { hitTolerance: 10 });
+    });
 
     // Iterate over the features and layers in reverse order
     for (var i = featuresAndLayers.length - 1; i >= 0; i--) {
@@ -401,7 +397,7 @@ function onSingleClickFeatures(evt) {
                 }
             }
         }
-    }, { hitTolerance: 10 });
+    });
     if (popupText === '<ul>') {
         popupText = '';
     } else {
@@ -888,7 +884,7 @@ let measuring = false;
 var searchLayer = new SearchLayer({
     layer: lyr_100LocenRiesgo_2,
     colName: 'Localidad',
-    zoom: 13,
+    zoom: 10,
     collapsed: true,
     map: map,
     maxResults: 10,
