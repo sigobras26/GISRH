@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_100LocenRiesgo_2 = function(feature, resolution){
+var style_ComitedeCuencaAreaTrabajosEnero2024amarzo2026_11 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,8 +21,7 @@ var style_100LocenRiesgo_2 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 5.0 + size,
-            displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(251,9,238,1.0)'})}),
+        stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.988}),fill: new ol.style.Fill({color: 'rgba(190,178,151,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
